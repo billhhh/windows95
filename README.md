@@ -1,4 +1,4 @@
-# windows95
+# windows95 
 
 This is Windows 95, running in an [Electron](https://electronjs.org/) app. Yes, it's the full thing. I'm sorry.
 
