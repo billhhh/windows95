@@ -1,15 +1,16 @@
 {
   "name": "windows95",
   "productName": "windows95",
-  "version": "1.3.0",
+  "version": "2.2.2",
   "description": "Windows 95, in an app. I'm sorry.",
-  "main": "src/index.js",
+  "main": "./dist/src/main/main",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "rimraf ./dist && electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "standard \"src/**/*.js\""
+    "lint": "prettier --write src/**/*.{ts,tsx}",
+    "less": "node ./tools/lessc.js"
   },
   "keywords": [],
   "author": "Felix Rieseberg, felix@felixrieseberg.com",
@@ -17,30 +18,33 @@
   "config": {
     "forge": "./forge.config.js"
   },
-  "standard": {
-    "globals": [
-      "appState",
-      "V86Starter",
-      "windows95"
-    ],
-    "ignore": [
-      "/src/renderer/lib/*.js"
-    ]
-  },
   "dependencies": {
-    "electron-default-menu": "^1.0.1",
     "electron-squirrel-startup": "^1.0.0",
-    "fs-extra": "^7.0.0",
-    "update-electron-app": "^1.3.0"
+    "fs-extra": "^9.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tslib": "^2.0.0",
+    "update-electron-app": "^1.5.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.22",
-    "@electron-forge/maker-deb": "^6.0.0-beta.22",
-    "@electron-forge/maker-flatpak": "^6.0.0-beta.22",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.22",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.22",
-    "@electron-forge/maker-zip": "^6.0.0-beta.22",
-    "electron": "3.0.0-beta.6",
-    "standard": "^11.0.1"
+    "@electron-forge/cli": "^6.0.0-beta.52",
+    "@electron-forge/maker-deb": "^6.0.0-beta.52",
+    "@electron-forge/maker-flatpak": "^6.0.0-beta.52",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.52",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.52",
+    "@electron-forge/maker-zip": "^6.0.0-beta.52",
+    "@electron-forge/publisher-github": "^6.0.0-beta.52",
+    "@types/fs-extra": "^9.0.1",
+    "@types/node": "^12.12.14",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.8",
+    "electron": "9.1.2",
+    "less": "^3.12.2",
+    "node-abi": "^2.18.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "standard": "^14.3.4",
+    "typescript": "^3.9.7"
   }
 }
